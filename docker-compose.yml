@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  jenkins:
+    container_name: jenkins
+    build:
+      context: .
+      dockerfile: jenkins.Dockerfile
+    ports:
+      - '8080:8080'
+      - '5000:5000'
+    volumes:
+      - /vagrant_data/jenkins:/tank
+    restart: always
+    # env_file:
+    #   - ./env/docker-config.env
+    networks:
+      - legacy
+networks:
+  legacy:
