@@ -9,8 +9,8 @@ services:
       - '8080:8080'
       - '5000:5000'
     volumes:
-      - /vagrant_data/jenkins:/tank
-      - /vagrant_data/jenkins_home:/var/jenkins_home
+      - ./vagrant_data/jenkins:/tank
+      - ./vagrant_data/jenkins_home:/var/jenkins_home
     env_file:
       - ./env/docker-config.env
     networks:
